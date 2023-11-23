@@ -1,0 +1,15 @@
+@import 'fonts';
+:root{
+    --eb: 'EightBits';
+
+    --tn: 37px;
+
+    --bg: #E4DCCF;
+    --yel: #F2E03C;
+    --red: #EA5455;
+    --blue: #D9D9D9;
+    --grey: #BCBCBC;
+}
+body{
+  margin:0
+}

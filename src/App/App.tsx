@@ -1,16 +1,11 @@
-import {FC} from 'react';
-import React from 'react';
-import styles from './style.scss'
+import { type FC } from 'react';
 import Home from '../pages';
-const title = 'React with Webpack and Babel';
+import './styles/style.css';
 
+const App: FC = () => (
+  <div>
+    <Home />
+  </div>
+);
 
-const App:FC = () => {
-  return (
-    <div>
-        <Home/>
-    </div>
-  );
-}
-
-export default App; 
+export default App;

@@ -10,7 +10,7 @@ module.exports = {
         compress: true,
         port: 3000,
     },
-    entry: './src/index.js',
+    entry: './src/index.tsx',
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
@@ -41,10 +41,14 @@ module.exports = {
                     options: {
                       modules: true,
                     },
-                  }, "postcss-loader"],
+                  }, 'postcss-loader'],
             },
             {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                test: /\.svg$/,
+                use: ['@svgr/webpack'],
+              },
+            {
+                test: /\.(png|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
             },
             {
@@ -54,6 +58,9 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.tsx', '.ts', '.scss', '.css', '.json']
+        alias: {
+            '@ui':path.resolve(__dirname,'src/shared/UIkit' )
+        },
+        extensions: ['.js', '.jsx', '.tsx', '.ts', '.scss', '.css', '.json', '.svg']
     }
 };
