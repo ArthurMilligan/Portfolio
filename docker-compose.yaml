@@ -60,17 +60,17 @@ services:
     networks:
       - portfolio
 
-  certbot:
-    image: certbot/certbot
-    depends_on:
-      - nginx
-    container_name: certbot
-    networks:
-      - portfolio
-    volumes:
-      - etc-letsencrypt:/etc/letsencrypt
-      - dist:/data/www
-    command:  certonly --webroot --webroot-path=/data/www --email ypypyt@gmail.com --agree-tos --no-eff-email -d ab-portfolio.ru -d www.ab-portfolio.ru
+  # certbot:
+  #   image: certbot/certbot
+  #   depends_on:
+  #     - nginx
+  #   container_name: certbot
+  #   networks:
+  #     - portfolio
+  #   volumes:
+  #     - etc-letsencrypt:/etc/letsencrypt
+  #     - dist:/data/www
+  #   command:  certonly --webroot --webroot-path=/data/www --email ypypyt@gmail.com --agree-tos --no-eff-email -d ab-portfolio.ru -d www.ab-portfolio.ru
 
 volumes:
   etc-letsencrypt:
