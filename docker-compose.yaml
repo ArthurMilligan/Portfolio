@@ -57,18 +57,20 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       - dist:/data/www
       - etc-letsencrypt:/etc/letsencrypt
-      - www-html:/var/www/html
     networks:
       - portfolio
 
-  # certbot:
-  #   image: certbot/certbot
-  #   depends_on:
-  #     - nginx
-  #   container_name: certbot
-  #   volumes:
-  #     - etc-letsencrypt:/etc/letsencrypt
-  #     - www-html:/var/www/html
+  certbot:
+    image: certbot/certbot
+    depends_on:
+      - nginx
+    container_name: certbot
+    networks:
+      - portfolio
+    volumes:
+      - etc-letsencrypt:/etc/letsencrypt
+      - dist:/data/www
+    command:  certonly --webroot --webroot-path=/var/www --email ypypyt@gmail.com --agree-tos --no-eff-email -d ab-portfolio.ru -d www.ab-portfolio.ru
 
 volumes:
   etc-letsencrypt:
