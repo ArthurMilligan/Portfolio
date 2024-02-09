@@ -1,0 +1,10 @@
+.folder{
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  &__message{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}

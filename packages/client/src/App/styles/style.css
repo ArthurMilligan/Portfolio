@@ -1,0 +1,32 @@
+@import 'fonts';
+:root{
+    --eb: 'EightBits';
+    --ebr: 'EightBitsRu';
+
+    --tn: 20px;
+    --ts: 16px;
+    --tl: 24px;
+
+    --h1: 30px;
+    --h2: 26px;
+    --h3: 24px;
+    --h4: 20px;
+
+    --bg: #E4DCCF;
+    --bgd: #F9F5EB;
+    --yel: #F2E03C;
+    --red: #EA5455;
+    --blue: #D9D9D9;
+    --grey: #BCBCBC;
+
+    --bc:url('/static/arrow.png');
+}
+body{
+  margin:0;
+  cursor: var(--bc), default;
+  overflow: hidden;
+
+}
+button{
+  cursor: var(--bc), default;
+}

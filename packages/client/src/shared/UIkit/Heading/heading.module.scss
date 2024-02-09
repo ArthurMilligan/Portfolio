@@ -1,0 +1,21 @@
+.heading{
+  font-family: var(--ebr);
+  &_level{
+    &_1{
+      font-size: var(--h1);
+      margin: 5px 0 5px 0;
+    }
+    &_2{
+      font-size: var(--h2);
+      margin: 5px 0 5px 0;
+    }
+    &_3{
+      font-size: var(--h3);
+      margin: 5px 0 5px 0;
+    }
+    &_4{
+      font-size: var(--h4);
+      margin: 5px 0 5px 0;
+    }
+  }
+}

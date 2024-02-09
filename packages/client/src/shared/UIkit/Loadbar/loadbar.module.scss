@@ -1,0 +1,10 @@
+.loadbar{
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  padding: 2px;
+  border: 2px solid black;
+  &__element{
+    border: 2px solid black;
+  }
+}

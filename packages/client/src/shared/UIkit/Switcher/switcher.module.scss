@@ -1,0 +1,22 @@
+.switcher{
+  &__button{
+    display: none;
+  }
+  &__label{
+    display: flex;
+    gap: 5px;
+    border: 2px black solid;
+    width:fit-content;
+    user-select:none;
+  }
+  &__item{
+    padding:  4px 5px 4px 5px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    &_active{
+      color: var(--bg);
+      background-color: black;
+    }
+  }
+}

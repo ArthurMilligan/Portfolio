@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "jsx": "react-jsx",
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "target": "ESNext",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "strictNullChecks": true,
+    "baseUrl": "src/",
+    "paths":{
+      "@ui":["shared/UIkit"],
+      "@lib":["shared/lib"],
+      "@api":["shared/api"],
+      "@widgets":["widgets"],
+      "@features":["features"],
+      "@entities":["entities"],
+    }
+  }
+}
