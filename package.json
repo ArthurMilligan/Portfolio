@@ -8,7 +8,7 @@
     "dev:server": "npx lerna run dev --scope=server",
     "dev:client": "npx lerna run dev --scope=client",
     "build:client": "npx lerna run build --scope=client",
-    "dev": "lerna run dev"
+    "dev": "lerna run dev --parallel --scope=server --scope=client"
   },
   "dependencies": {},
   "devDependencies": {

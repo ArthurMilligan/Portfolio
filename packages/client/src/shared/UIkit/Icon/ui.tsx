@@ -6,7 +6,12 @@ export type TIconName =
   | 'star'
   | 'telegram'
   | 'github'
-  | 'mail';
+  | 'mail'
+  | 'fire'
+  | 'lamp'
+  | 'computer'
+  | 'mountains'
+  | 'mountains2';
 
 interface IIconProps extends HTMLProps<SVGSVGElement> {
   name: TIconName;

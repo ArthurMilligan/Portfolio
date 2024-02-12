@@ -9,7 +9,7 @@ import { type TWindowType } from '@entities';
 import uuid from 'react-uuid';
 import s from './desktopElements.module.scss';
 import { DesktopElementsStore } from '../model';
-import { getDesktopMatrix, getPosition } from '../lib';
+import { getDesktopMatrix, getPosition, height, width } from '../lib';
 
 interface IDesktopElementsProps {
   ElementButton: FC<{
@@ -36,8 +36,8 @@ const DesktopElements: FC<IDesktopElementsProps> = observer(
       e.preventDefault();
       const id = Number(e.dataTransfer.getData('id'));
 
-      const dropX = Math.floor(e.clientX / 100);
-      const dropY = Math.floor((e.clientY - innerHeight * 0.05) / 100);
+      const dropX = Math.floor(e.clientX / width);
+      const dropY = Math.floor((e.clientY - innerHeight * 0.05) / height);
 
       if (desktopElementsMatrix[dropX][dropY] === null && id) {
         const oldCoord = getElemPosition(id);

@@ -21,7 +21,7 @@ const OpenModalButton: FC<IOpenModalButtonProps> = observer(
       addItem(id, name, icon);
     };
     const shortName =
-      !active && name.length > 7 ? `${name.slice(0, 7)}...` : name;
+      !active && name.length > 11 ? `${name.slice(0, 8)}...` : name;
 
     return (
       <button

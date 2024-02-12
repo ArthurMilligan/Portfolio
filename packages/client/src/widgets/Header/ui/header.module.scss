@@ -10,4 +10,9 @@
   align-items: center;
   box-sizing: border-box;
   justify-content: space-between;
+  &__meta{
+    display: flex;
+    flex-direction: row;
+    gap:10px
+  }
 }

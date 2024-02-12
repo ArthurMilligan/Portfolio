@@ -3,8 +3,6 @@
   background-color: var(--bg);
   &__dragContainer{
     position:absolute;
-    top:10vh;
-    left:25vw;
     &_collapse{
       display: none;
     }

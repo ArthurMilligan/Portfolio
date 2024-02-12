@@ -8,6 +8,7 @@ interface ITextWithIconProps {
   iconName: TIconName;
   size?: number;
   className?: string;
+  bold?: boolean;
 }
 
 const TextWithIcon: FC<ITextWithIconProps> = ({
@@ -15,10 +16,11 @@ const TextWithIcon: FC<ITextWithIconProps> = ({
   children,
   className,
   size = 16,
+  bold = false,
 }) => (
   <span className={`${s.textWithIcon} ${className}`}>
-    <Icon size={size} name={iconName} />
-    <Text bold>{children}</Text>
+    <Icon className={s.textWithIcon__icon} size={size} name={iconName} />
+    <Text className={s.textWithIcon__text} bold={bold}>{children}</Text>
   </span>
 );
 

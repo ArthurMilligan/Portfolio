@@ -9,6 +9,14 @@ module.exports = {
         static: './dist',
         compress: true,
         port: 3000,
+        proxy: {
+          '/api': {
+            target: `http://localhost:${process.env.SERVER_PORT}/`,
+            pathRewrite: {
+              '/api': '',
+            },
+          },
+        },
     },
     entry: './src/index.tsx',
     output: {
@@ -22,6 +30,7 @@ module.exports = {
             template: `./static/index.html`,
         }),
     ],
+
     module: {
         rules: [
             {

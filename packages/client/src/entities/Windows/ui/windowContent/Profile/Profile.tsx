@@ -1,5 +1,5 @@
 import { type FC } from 'react';
-import { Heading, Loadbar, Text, TextWithIcon } from '@ui';
+import { Heading, Link, Loadbar, Text, TextWithIcon } from '@ui';
 import uuid from 'react-uuid';
 import { type IProfile } from '../../../model';
 import s from './profile.module.scss';
@@ -9,7 +9,9 @@ const Profile: FC<IProfile> = ({
   avatar,
   age,
   about,
-  // contacts: { mail, gitHub, telegram },
+  mail,
+  gitHub,
+  telegram,
   proffesion,
   experience,
   education,
@@ -41,9 +43,13 @@ const Profile: FC<IProfile> = ({
       </div>
       <Heading level={2}>Контакты</Heading>
       <div className={s.profile__contacts}>
-        <TextWithIcon iconName='telegram'>telegram</TextWithIcon>
-        <TextWithIcon iconName='github'>github</TextWithIcon>
-        <TextWithIcon iconName='mail'>mail</TextWithIcon>
+        <Link href={telegram.url}>
+          <TextWithIcon iconName='telegram'>{telegram.name}</TextWithIcon>
+        </Link>
+        <Link href={gitHub.url}>
+          <TextWithIcon iconName='github'>{gitHub.name}</TextWithIcon>
+        </Link>
+        <TextWithIcon iconName='mail'>{mail.name}</TextWithIcon>
         {/* TODO: сделать тут кнопочки- ссылки на все сети */}
       </div>
 
@@ -58,7 +64,13 @@ const Profile: FC<IProfile> = ({
               {place}, {position}
             </Heading>
             <Text bold>Задачи</Text>
-            {tasks?.map((task) => <Text key={uuid()}>{task}</Text>)}
+            <div className={s.profile__taskList}>
+              {tasks?.map((task) => (
+                <TextWithIcon key={uuid()} iconName='lamp'>
+                  {task}
+                </TextWithIcon>
+              ))}
+            </div>
             <Text bold>Период</Text>
             <Text>
               {fromatDate(dateStart)}-{fromatDate(dateEnd)}
@@ -103,6 +115,7 @@ const Profile: FC<IProfile> = ({
           <div className={s.profile__list}>
             {keySkills?.map((skill) => (
               <TextWithIcon
+                bold
                 key={uuid()}
                 iconName='star'
                 className={s.profile__textWithIcon}

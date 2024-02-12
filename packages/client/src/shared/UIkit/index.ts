@@ -9,3 +9,4 @@ export { default as Loader } from './Loader';
 export { default as Clock } from './Clock';
 export { default as Switcher } from './Switcher';
 export { default as Link } from './Link';
+export { default as HelloWindow } from './HelloWindow';

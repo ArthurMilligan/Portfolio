@@ -1,5 +1,11 @@
 .textWithIcon{
   display: flex;
   align-items: center;
-  gap: 10px
+  gap: 10px;
+  &__icon{
+    flex-shrink: 0;
+  }
+  &__text{
+    line-height:17px
+  }
 }

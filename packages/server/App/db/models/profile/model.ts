@@ -19,8 +19,11 @@ export interface IProfileAttributes {
   age: number;
   about: string;
   mail: string;
+  mailUrl: string;
   gitHub: string;
+  gitHubUrl: string;
   telegram: string;
+  telegramUrl: string;
   proffesion: string;
   keySkills: string[];
   achievements: string[];
@@ -72,13 +75,31 @@ class Profile extends Model<Profile, IProfileAttributes> {
     type: DataType.STRING,
     allowNull: true,
   })
+  mailUrl: string;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
   gitHub: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: true,
   })
+  gitHubUrl: string;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
   telegram: string;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
+  telegramUrl: string;
 
   @Column({
     type: DataType.STRING,

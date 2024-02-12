@@ -7,7 +7,10 @@ const Header: FC = () => (
     <Text bold size='large'>
       Arthur Bokshaaa
     </Text>
-    <Clock />
+    <div className={s.header__meta}>
+      <Clock />
+      <Text>v1.1</Text>
+    </div>
   </div>
 );
 

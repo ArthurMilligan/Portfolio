@@ -22,10 +22,17 @@ export interface IProfile {
   avatar: string;
   age: number;
   about: string;
-  contacts: {
-    mail: string;
-    gitHub: string;
-    telegram: string;
+  mail: {
+    name: string;
+    url: string;
+  };
+  gitHub: {
+    name: string;
+    url: string;
+  };
+  telegram: {
+    name: string;
+    url: string;
   };
   proffesion: string;
   experience: IJob[];

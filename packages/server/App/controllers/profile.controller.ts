@@ -63,8 +63,11 @@ class ProfileAPI {
         age,
         about,
         mail,
+        mailUrl,
         gitHub,
+        gitHubUrl,
         telegram,
+        telegramUrl,
         proffesion,
         keySkills,
         achievements,
@@ -78,9 +81,18 @@ class ProfileAPI {
         avatar,
         about,
         age,
-        mail,
-        gitHub,
-        telegram,
+        mail: {
+          name: mail,
+          url: mailUrl,
+        },
+        gitHub: {
+          name: gitHub,
+          url: gitHubUrl,
+        },
+        telegram: {
+          name: telegram,
+          url: telegramUrl,
+        },
         proffesion,
         keySkills,
         achievements,
@@ -91,6 +103,8 @@ class ProfileAPI {
         additionalEducation: education.filter(({ type }: any) => type === '1'),
         experience: [...jobs],
       };
+
+      console.log(res);
 
       return response.status(200).json(res);
     } catch (error) {

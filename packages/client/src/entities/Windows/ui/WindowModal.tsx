@@ -1,4 +1,4 @@
-import { type FC, memo } from 'react';
+import { type FC, memo, useEffect } from 'react';
 import { useDraggable } from '@lib';
 import { Loader, ResizeContainer, Text } from '@ui';
 import s from './windows.module.scss';
@@ -40,7 +40,7 @@ const WindowModal: FC<IWindowModalProps> = ({
   ElementButton,
   moveOnTop,
 }) => {
-  const { handleMouseDown, ref, isMove } = useDraggable();
+  const { handleMouseDown, ref, isMove } = useDraggable(order);
   const ContentComponent = windowContent[contentType];
   const handleMoveonTop = (): void => {
     moveOnTop(id);

@@ -3,6 +3,7 @@ import {
   type MouseEvent as ReactMouseEvent,
   useRef,
   type RefObject,
+  useEffect,
 } from 'react';
 
 interface ICoord {
@@ -21,7 +22,7 @@ interface IUseDraggagleReturn {
   ref: RefObject<HTMLDivElement>;
 }
 
-const useDraggable = (): IUseDraggagleReturn => {
+const useDraggable = (index: number): IUseDraggagleReturn => {
   const [isMove, setIsMove] = useState(false);
   const {
     current: { mouse, element },
@@ -30,6 +31,13 @@ const useDraggable = (): IUseDraggagleReturn => {
     element: {},
   });
   const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(()=>{
+    if(ref?.current){
+      ref.current.style.left = `calc(25vw + ${index*9}px)`
+      ref.current.style.top = `calc(10vh + ${index*9}px)`
+    }
+  },[])
 
   const handleMouseMove = (e: MouseEvent): void => {
     const mouseTop = mouse.top ?? 0;

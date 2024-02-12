@@ -1,0 +1,27 @@
+0 silly argv {
+0 silly argv   _: [ 'run' ],
+0 silly argv   parallel: true,
+0 silly argv   since: 'server/client',
+0 silly argv   lernaVersion: '8.1.2',
+0 silly argv   '$0': 'node_modules\\lerna\\dist\\cli.js',
+0 silly argv   script: 'dev'
+0 silly argv }
+1 notice cli v8.1.2
+2 verbose packageConfigs Explicit "packages" configuration found in lerna.json. Resolving packages using the configured glob(s): ["packages/*"]
+3 verbose rootPath C:\Users\ypypy\OneDrive\Рабочий стол\code\practicum\Portfolio
+4 notice filter changed since "server/client"
+5 silly hasTags
+6 verbose hasTags false
+7 info Looking for changed packages since server/client
+8 silly checking diff packages/client
+9 error Error: Command failed with exit code 128: git diff --name-only server/client -- packages/client
+9 error fatal: bad revision 'server/client'
+9 error     at makeError (C:\Users\ypypy\OneDrive\Рабочий стол\code\practicum\Portfolio\node_modules\execa\lib\error.js:59:11)
+9 error     at module.exports.sync (C:\Users\ypypy\OneDrive\Рабочий стол\code\practicum\Portfolio\node_modules\execa\index.js:186:17)
+9 error     at execSync (C:\Users\ypypy\OneDrive\Рабочий стол\code\practicum\Portfolio\node_modules\lerna\dist\index.js:142:31)
+9 error     at diffSinceIn (C:\Users\ypypy\OneDrive\Рабочий стол\code\practicum\Portfolio\node_modules\lerna\dist\index.js:556:10)
+9 error     at hasDiffSinceThatIsntIgnored (C:\Users\ypypy\OneDrive\Рабочий стол\code\practicum\Portfolio\node_modules\lerna\dist\index.js:529:18)
+9 error     at isCandidate (C:\Users\ypypy\OneDrive\Рабочий стол\code\practicum\Portfolio\node_modules\lerna\dist\index.js:626:77)
+9 error     at C:\Users\ypypy\OneDrive\Рабочий стол\code\practicum\Portfolio\node_modules\lerna\dist\index.js:634:9
+9 error     at Array.forEach (<anonymous>)
+9 error     at collectProjects (C:\Users\ypypy\OneDrive\Рабочий стол\code\practicum\Portfolio\node_modules\lerna\dist\index.js:633:12)

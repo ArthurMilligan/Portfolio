@@ -7,7 +7,12 @@ interface ILinkProps {
   className?: string;
 }
 const Link: FC<ILinkProps> = ({ children, className, href }) => (
-  <a href={href} className={`${s.link} ${className}`}>
+  <a
+    href={href}
+    target='_blank'
+    className={`${s.link} ${className}`}
+    rel='noreferrer'
+  >
     {children}
   </a>
 );
