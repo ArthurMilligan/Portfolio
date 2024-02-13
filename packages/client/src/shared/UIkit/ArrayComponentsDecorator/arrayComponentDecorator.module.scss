@@ -1,0 +1,16 @@
+.arrayComponentDecorator{
+  &__button{
+    padding:  4px 5px 4px 5px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    border: 2px black solid;
+    width:120px;
+    user-select:none;
+    transition: all 0.2s;
+    &:active{
+      // outline: 3px solid black;s
+      background-color: var(--bgd);
+    }
+  }
+}

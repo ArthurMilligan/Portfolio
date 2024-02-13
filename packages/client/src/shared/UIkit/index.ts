@@ -10,3 +10,4 @@ export { default as Clock } from './Clock';
 export { default as Switcher } from './Switcher';
 export { default as Link } from './Link';
 export { default as HelloWindow } from './HelloWindow';
+export { default as ArrayComponentsDecorator } from './ArrayComponentsDecorator';

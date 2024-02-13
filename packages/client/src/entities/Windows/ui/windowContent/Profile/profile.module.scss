@@ -1,5 +1,5 @@
 .profile{
-  margin: 5px 0 10px 10px;
+  margin: 15px 0 10px 30px;
   &__textWithIcon{
     display: flex;
     gap:4px;
@@ -45,8 +45,8 @@
   }
   &__skillsBlock{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    // flex-wrap: wrap;
     gap:5px
   }
   &__hardSkillText{
@@ -85,5 +85,8 @@
     flex-direction: column;
     gap:10px;
     padding-left:20px;
+  }
+  &__sillsDropButton{
+    margin: 10px 0 20px 150px;
   }
 }

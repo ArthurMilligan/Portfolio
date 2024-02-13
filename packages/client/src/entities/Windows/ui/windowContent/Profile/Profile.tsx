@@ -1,6 +1,14 @@
 import { type FC } from 'react';
-import { Heading, Link, Loadbar, Text, TextWithIcon } from '@ui';
+import {
+  ArrayComponentsDecorator,
+  Heading,
+  Link,
+  Loadbar,
+  Text,
+  TextWithIcon,
+} from '@ui';
 import uuid from 'react-uuid';
+import { sortSkills } from '../../../utils';
 import { type IProfile } from '../../../model';
 import s from './profile.module.scss';
 
@@ -27,7 +35,7 @@ const Profile: FC<IProfile> = ({
 
   return (
     <div className={s.profile}>
-      <Heading>Портфилио</Heading>
+      <Heading>Портфолио</Heading>
       <Heading level={2}>Общая информация</Heading>
       <div className={s.profile__info}>
         <div className={s.profile__photo}>
@@ -50,7 +58,6 @@ const Profile: FC<IProfile> = ({
           <TextWithIcon iconName='github'>{gitHub.name}</TextWithIcon>
         </Link>
         <TextWithIcon iconName='mail'>{mail.name}</TextWithIcon>
-        {/* TODO: сделать тут кнопочки- ссылки на все сети */}
       </div>
 
       <Heading level={2}>Опыт работы</Heading>
@@ -109,7 +116,6 @@ const Profile: FC<IProfile> = ({
         )}
       </div>
       <div>
-        <Heading level={2}>Навыки</Heading>
         <div>
           <Heading level={3}>Ключевые навыки</Heading>
           <div className={s.profile__list}>
@@ -128,23 +134,27 @@ const Profile: FC<IProfile> = ({
         <div>
           <Heading level={3}>Стек</Heading>
           <div className={s.profile__skillsBlock}>
-            {hardSkills?.map(({ name: skillName, level }) => (
-              <div key={uuid()} className={s.profile__skill}>
-                <Text className={s.profile__hardSkillText}>{skillName} </Text>
-                <Loadbar width={200} height={15} value={level / 5} />
-              </div>
-            ))}
+            <ArrayComponentsDecorator className={s.profile__sillsDropButton}>
+              {sortSkills(hardSkills)?.map(({ name: skillName, level }) => (
+                <div key={uuid()} className={s.profile__skill}>
+                  <Text className={s.profile__hardSkillText}>{skillName} </Text>
+                  <Loadbar width={200} height={15} value={level / 5} />
+                </div>
+              ))}
+            </ArrayComponentsDecorator>
           </div>
         </div>
         <div>
           <Heading level={3}>Надпрофессиональные компетен­ции</Heading>
           <div className={s.profile__skillsBlock}>
-            {softSkills?.map(({ name: skillName, level }) => (
-              <div key={uuid()} className={s.profile__skill}>
-                <Text className={s.profile__softSkillText}>{skillName} </Text>
-                <Loadbar width={200} height={15} value={level / 5} />
-              </div>
-            ))}
+            <ArrayComponentsDecorator className={s.profile__sillsDropButton}>
+              {sortSkills(softSkills)?.map(({ name: skillName, level }) => (
+                <div key={uuid()} className={s.profile__skill}>
+                  <Text className={s.profile__softSkillText}>{skillName} </Text>
+                  <Loadbar width={200} height={15} value={level / 5} />
+                </div>
+              ))}
+            </ArrayComponentsDecorator>
           </div>
         </div>
       </div>
