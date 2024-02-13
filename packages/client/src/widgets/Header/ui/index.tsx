@@ -5,7 +5,7 @@ import s from './header.module.scss';
 const Header: FC = () => (
   <div className={s.header}>
     <Text bold size='large'>
-      Arthur Bokshaaa
+      Arthur Boksha
     </Text>
     <div className={s.header__meta}>
       <Clock />

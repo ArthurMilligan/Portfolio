@@ -23,15 +23,17 @@ const Project: FC<IProject> = ({
 
   return (
     <div className={s.project}>
-      <div className={s.project__switcher}>
-        <Switcher
-          values={values}
-          current={switcher}
-          setCurrent={setSwitcher}
-          name='projectSwitcher'
-          id='projectSwitcher'
-        />
-      </div>
+      {projectUrl && (
+        <div className={s.project__switcher}>
+          <Switcher
+            values={values}
+            current={switcher}
+            setCurrent={setSwitcher}
+            name='projectSwitcher'
+            id='projectSwitcher'
+          />
+        </div>
+      )}
 
       {switcher === 'preview' && (
         <div className={s.project__frameContainer}>
@@ -42,39 +44,48 @@ const Project: FC<IProject> = ({
         <div className={s.project__about}>
           <Heading className={s.project__heading1} level={1}>
             {name}
-            <Icon name={icon} size={40} />
+            {icon && <Icon name={icon} size={40} />}
           </Heading>
           <Heading className={s.project__heading2} level={2}>
             Описание
           </Heading>
           <div className={s.project__description}>
-            <span>
-              <Text>Тип проекта: </Text>
-              <Text bold>{projectType}</Text>
-            </span>
+            {projectType && (
+              <span>
+                <Text>Тип проекта: </Text>
+                <Text bold>{projectType}</Text>
+              </span>
+            )}
 
-            <Text className={s.project__descriptionText}>
-              {addBrToText(description)}
-            </Text>
-            <span>
-              <Text bold>Ссылка </Text>
-              <Link href={codeUrl}>
-                <Text>{codeUrl}</Text>
-              </Link>
-            </span>
+            {description && (
+              <Text className={s.project__descriptionText}>
+                {addBrToText(description)}
+              </Text>
+            )}
+            {codeUrl && (
+              <span>
+                <Text bold>Ссылка </Text>
+                <Link href={codeUrl}>
+                  <Text>{codeUrl}</Text>
+                </Link>
+              </span>
+            )}
           </div>
-
-          <Heading className={s.project__heading2} level={2}>
-            Задачи
-          </Heading>
+          {tasks && (
+            <Heading className={s.project__heading2} level={2}>
+              Задачи
+            </Heading>
+          )}
           {tasks?.map((task) => (
             <TextWithIcon className={s.project__listElement} iconName='star'>
               {task}
             </TextWithIcon>
           ))}
-          <Heading className={s.project__heading2} level={2}>
-            Стек
-          </Heading>
+          {stack && (
+            <Heading className={s.project__heading2} level={2}>
+              Стек
+            </Heading>
+          )}
           {stack?.map((item) => (
             <TextWithIcon className={s.project__listElement} iconName='star'>
               {item}

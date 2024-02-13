@@ -1,7 +1,6 @@
 import { type FC } from 'react';
 import { observer } from 'mobx-react-lite';
 import { type TIconName } from '@ui';
-import uuid from 'react-uuid';
 import { MenuItemStore } from '../model';
 import s from './menuItems.module.scss';
 
@@ -23,7 +22,7 @@ const MenuItems: FC<IMenuItemsProps> = observer(({ ShowWindowButton }) => {
         {items.map(({ id, name, icon }) => (
           <ShowWindowButton
             className={s.menuItems__item}
-            key={uuid()}
+            key={id}
             id={id}
             name={name}
             icon={icon}
