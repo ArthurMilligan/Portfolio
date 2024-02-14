@@ -76,21 +76,25 @@ const Project: FC<IProject> = ({
               Задачи
             </Heading>
           )}
-          {tasks?.map((task) => (
-            <TextWithIcon className={s.project__listElement} iconName='star'>
-              {task}
-            </TextWithIcon>
-          ))}
+          <div className={s.project__list}>
+            {tasks?.map((task) => (
+              <TextWithIcon className={s.project__listElement} iconName='star'>
+                {task}
+              </TextWithIcon>
+            ))}
+          </div>
           {stack && (
             <Heading className={s.project__heading2} level={2}>
               Стек
             </Heading>
           )}
-          {stack?.map((item) => (
-            <TextWithIcon className={s.project__listElement} iconName='star'>
-              {item}
-            </TextWithIcon>
-          ))}
+          <div className={s.project__list}>
+            {stack?.map((item) => (
+              <TextWithIcon className={s.project__listElement} iconName='star'>
+                {item}
+              </TextWithIcon>
+            ))}
+          </div>
         </div>
       )}
     </div>

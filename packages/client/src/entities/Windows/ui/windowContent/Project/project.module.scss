@@ -35,7 +35,12 @@
     gap: 20px
   }
   &__heading2{
-    margin-top: 10px;
+    margin-top: 15px;
+  }
+  &__list{
+    display: flex;
+    flex-direction: column;
+    gap:10px
   }
   &__listElement{
     padding-left: 10px;
