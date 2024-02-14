@@ -7,7 +7,7 @@ const Mobile: FC = () => (
     <SVG className={s.mobile__svg} />
     <span className={s.mobile__text}>
       Мобильная версия находится в разработке и будет доступна в ближайшее
-      время.
+      время. Пожалуйста, зайдите на сайт через компьютер.
     </span>
     <span className={s.mobile__text}>Спасибо за терпение!</span>
   </div>
