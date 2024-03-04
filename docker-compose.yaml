@@ -59,7 +59,6 @@ services:
       - dist:/data/www
       - ibrae_dist2:/data/www2
       - etc-letsencrypt:/etc/letsencrypt
-      - etc-letsencrypt2:/etc/letsencrypt2
     networks:
       - portfolio
       - portfolio_ibrae
@@ -72,13 +71,12 @@ services:
     networks:
       - portfolio
     volumes:
-      - etc-letsencrypt2:/etc/letsencrypt2
+      - etc-letsencrypt:/etc/letsencrypt
       - ibrae_dist2:/data/www2
     command:  certonly --webroot --webroot-path=/data/www2 --email ypypyt@gmail.com --agree-tos --no-eff-email -d digital-economy.ab-portfolio.ru-d www.digital-economy.ab-portfolio.ru
 
 volumes:
   etc-letsencrypt:
-  etc-letsencrypt2:
   www-html:
   dist:
   ibrae_dist2:
