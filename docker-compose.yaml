@@ -52,7 +52,7 @@ services:
     depends_on:
       - server_ibrae
     ports:
-      - "80:90"
+      - "90:90"
       - "444:444"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
