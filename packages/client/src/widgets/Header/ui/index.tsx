@@ -13,10 +13,10 @@ const Header: FC = () => {
   return (
     <div style={{ backgroundColor: backOfHeader }} className={s.header}>
       <Text bold size='Large'>
-        Arthur Boksha
+        Digital Economy
       </Text>
       <div className={s.header__meta}>
-        <ThemeChangeToggle />
+        {/* <ThemeChangeToggle /> */}
         <Clock />
         <Text>v1.1</Text>
       </div>

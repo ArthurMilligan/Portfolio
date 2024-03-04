@@ -11,9 +11,9 @@ const App: FC = () => (
     {innerWidth < 750 ? (
       <Mobile />
     ) : (
-      <HelloWindow>
+      // <HelloWindow>
         <Home />
-      </HelloWindow>
+      // </HelloWindow>
     )}
   </Background>
 );

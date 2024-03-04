@@ -33,7 +33,7 @@ const ThemeContextProvider: FC<IThemeContextProviderProps> = ({
   children,
   themes,
 }) => {
-  const [theme, setTheme] = useState<ITheme>(themes.old);
+  const [theme, setTheme] = useState<ITheme>(themes.new);
   const changeTheme = (): void => {
     if (theme.name === 'old') {
       setTheme(themes.new);
