@@ -57,31 +57,33 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       - dist:/data/www
-      - dist2:/data/www2
+      - ibrae_dist2:/data/www2
       - etc-letsencrypt:/etc/letsencrypt
+      - etc-letsencrypt2:/etc/letsencrypt2
     networks:
       - portfolio
       - portfolio_ibrae
 
-  # certbot:
-  #   image: certbot/certbot
-  #   depends_on:
-  #     - nginx
-  #   container_name: certbot
-  #   networks:
-  #     - portfolio
-  #   volumes:
-  #     - etc-letsencrypt:/etc/letsencrypt
-  #     - dist:/data/www
-  #   command:  certonly --webroot --webroot-path=/data/www --email ypypyt@gmail.com --agree-tos --no-eff-email -d ab-portfolio.ru -d www.ab-portfolio.ru
+  certbot:
+    image: certbot/certbot
+    depends_on:
+      - nginx
+    container_name: certbot
+    networks:
+      - portfolio
+    volumes:
+      - etc-letsencrypt2:/etc/letsencrypt
+      - ibrae_dist2:/data/www2
+    command:  certonly --webroot --webroot-path=/data/www2 --email ypypyt@gmail.com --agree-tos --no-eff-email -d digital-economy.ab-portfolio.ru-d www.digital-economy.ab-portfolio.ru
 
 volumes:
   etc-letsencrypt:
+  etc-letsencrypt2:
   www-html:
   dist:
-  dist2:
+  ibrae_dist2:
     external: true
-    name: dist2
+    name: ibrae_dist2
 
 
 networks:
