@@ -2,15 +2,26 @@
 :root{
     --eb: 'EightBits';
     --ebr: 'EightBitsRu';
+    --sf: 'SF';
 
-    --tn: 20px;
-    --ts: 16px;
-    --tl: 24px;
+    --tnn: 16px;
+    --tsn: 12px;
+    --tln: 20px;
 
-    --h1: 30px;
-    --h2: 26px;
-    --h3: 24px;
-    --h4: 20px;
+    --tno: 20px;
+    --tso: 16px;
+    --tlo: 24px;
+
+
+    --h1o: 30px;
+    --h2o: 26px;
+    --h3o: 24px;
+    --h4o: 20px;
+
+    --h1n: 26px;
+    --h2n: 22px;
+    --h3n: 20px;
+    --h4n: 16px;
 
     --bg: #E4DCCF;
     --bgd: #F9F5EB;
@@ -20,12 +31,12 @@
     --grey: #BCBCBC;
 
     --bc:url('/static/arrow.png');
+    --bgi:url('/static/background.png');
 }
 body{
   margin:0;
   cursor: var(--bc), default;
   overflow: hidden;
-
 }
 button{
   cursor: var(--bc), default;

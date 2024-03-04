@@ -1,13 +1,13 @@
 import { type FC } from 'react';
-import Home, { Mobile } from '../pages';
 import './styles/style.css';
-// eslint-disable-next-line import/order
-import { HelloWindow } from '@ui';
+import { Background, HelloWindow } from '@ui';
+import Home, { Mobile } from '../pages';
+import withProviders from './providers';
 
 const { innerWidth } = window;
 
 const App: FC = () => (
-  <div>
+  <Background>
     {innerWidth < 750 ? (
       <Mobile />
     ) : (
@@ -15,7 +15,7 @@ const App: FC = () => (
         <Home />
       </HelloWindow>
     )}
-  </div>
+  </Background>
 );
 
-export default App;
+export default withProviders(<App />);

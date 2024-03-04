@@ -29,6 +29,7 @@ export interface IProfileAttributes {
   achievements: string[];
   folderId: number;
   hobbys: string;
+  iframeUrl: string;
 }
 
 @Table({ tableName: 'profile', timestamps: false })
@@ -124,6 +125,12 @@ class Profile extends Model<Profile, IProfileAttributes> {
     allowNull: true,
   })
   hobbys: string;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
+  iframeUrl: string;
 
   @HasMany(() => Skills)
   skills: Skills[];

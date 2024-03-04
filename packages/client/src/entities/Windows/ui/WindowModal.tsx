@@ -1,6 +1,6 @@
-import { type FC, memo, useEffect } from 'react';
+import { type FC, memo } from 'react';
 import { useDraggable } from '@lib';
-import { Loader, ResizeContainer, Text } from '@ui';
+import { Loader, ResizeContainer, Text, useThemeContext } from '@ui';
 import s from './windows.module.scss';
 import { type TWindowType, type TWindowStatus } from '../model';
 import windowContent from './windowContent';
@@ -21,6 +21,7 @@ interface IWindowModalProps {
     id: number;
     type: TWindowType;
     elemId?: number;
+    inFolder?: boolean;
   }>;
   moveOnTop: (id: number) => void;
 }
@@ -40,6 +41,14 @@ const WindowModal: FC<IWindowModalProps> = ({
   ElementButton,
   moveOnTop,
 }) => {
+  const {
+    theme: {
+      backOfElementsColor,
+      backOfWindowHeader,
+      windowBorder,
+      windowBorderRadius,
+    },
+  } = useThemeContext();
   const { handleMouseDown, ref, isMove } = useDraggable(order);
   const ContentComponent = windowContent[contentType];
   const handleMoveonTop = (): void => {
@@ -58,10 +67,21 @@ const WindowModal: FC<IWindowModalProps> = ({
     >
       <ResizeContainer
         className={s.windowModal}
+        style={{
+          backgroundColor: backOfElementsColor,
+          borderRadius: windowBorderRadius,
+          border: windowBorder,
+        }}
         customOnMouseDown={handleMoveonTop}
       >
         <div
           onMouseDown={handleMouseDown}
+          style={{
+            backgroundColor: backOfWindowHeader,
+            borderTopLeftRadius: windowBorderRadius,
+            borderTopRightRadius: windowBorderRadius,
+            borderBottom: windowBorder,
+          }}
           className={`${s.windowModal__header} ${
             isMove ? s.windowModal__header_moving : ''
           }`}
@@ -72,6 +92,7 @@ const WindowModal: FC<IWindowModalProps> = ({
             className={`${s.windowModal__title} ${
               isMove ? s.windowModal__title_moving : ''
             }`}
+            inFolder
           >
             {name}
           </Text>
@@ -85,7 +106,7 @@ const WindowModal: FC<IWindowModalProps> = ({
 
           {fetchStatus === 'error' && (
             <div className={s.windowModal__message}>
-              <Text size='large' bold>
+              <Text size='Large' bold>
                 Error
               </Text>
             </div>

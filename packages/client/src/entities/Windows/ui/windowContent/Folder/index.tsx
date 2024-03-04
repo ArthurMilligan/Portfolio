@@ -10,6 +10,7 @@ interface IFolderProps extends IFolder {
     id: number;
     type: TWindowType;
     elemId?: number;
+    inFolder?: boolean;
   }>;
 }
 
@@ -24,6 +25,7 @@ const Folder: FC<IFolderProps> = ({ ElementButton, items }) => (
         elemId={elementId}
         name={name}
         type={type}
+        inFolder
       />
     ))}
   </div>

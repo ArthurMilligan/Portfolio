@@ -1,4 +1,5 @@
 import { type FC, Suspense, lazy, useMemo, type HTMLProps } from 'react';
+import { useThemeContext } from '../ThemeContext';
 
 export type TIconName =
   | 'profile'
@@ -21,9 +22,16 @@ interface IIconProps extends HTMLProps<SVGSVGElement> {
 }
 
 const Icon: FC<IIconProps> = ({ name, className, size = 66 }) => {
+  const {
+    theme: { name: themeName },
+  } = useThemeContext();
   const SVGElem = useMemo(
-    () => lazy(async () => import(`./icons/${name}.svg`)),
-    [name],
+    () =>
+      lazy(
+        async () =>
+          import(`./icons/${themeName === 'old' ? 'old' : 'new'}/${name}.svg`),
+      ),
+    [name, themeName],
   );
 
   return (

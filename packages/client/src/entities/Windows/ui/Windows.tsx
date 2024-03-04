@@ -12,6 +12,7 @@ interface IWIndowsProps {
     id: number;
     type: TWindowType;
     elemId?: number;
+    inFolder?: boolean;
   }>;
 }
 

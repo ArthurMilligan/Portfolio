@@ -75,6 +75,7 @@ class ProfileAPI {
         skills,
         education,
         jobs,
+        iframeUrl,
       } = profile;
       const res = {
         name,
@@ -102,6 +103,7 @@ class ProfileAPI {
         education: education.filter(({ type }: any) => type === '0'),
         additionalEducation: education.filter(({ type }: any) => type === '1'),
         experience: [...jobs],
+        iframeUrl,
       };
 
       console.log(res);

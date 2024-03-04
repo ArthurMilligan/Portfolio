@@ -18,8 +18,23 @@ const Project: FC<IProject> = ({
   codeUrl,
   projectType,
   icon,
+  iframeUrl,
 }) => {
   const [switcher, setSwitcher] = useState('about');
+
+  if (iframeUrl) {
+    return (
+      <div className={s.project__iframe}>
+        <iframe
+          title={`${iframeUrl}`}
+          src={`${iframeUrl}`}
+          width='100%'
+          height='100%'
+          allow='autoplay'
+        />
+      </div>
+    );
+  }
 
   return (
     <div className={s.project}>
@@ -52,21 +67,25 @@ const Project: FC<IProject> = ({
           <div className={s.project__description}>
             {projectType && (
               <span>
-                <Text>Тип проекта: </Text>
-                <Text bold>{projectType}</Text>
+                <Text inFolder>Тип проекта: </Text>
+                <Text inFolder bold>
+                  {projectType}
+                </Text>
               </span>
             )}
 
             {description && (
-              <Text className={s.project__descriptionText}>
+              <Text inFolder className={s.project__descriptionText}>
                 {addBrToText(description)}
               </Text>
             )}
             {codeUrl && (
               <span>
-                <Text bold>Ссылка </Text>
+                <Text inFolder bold>
+                  Ссылка{' '}
+                </Text>
                 <Link href={codeUrl}>
-                  <Text>{codeUrl}</Text>
+                  <Text inFolder>{codeUrl}</Text>
                 </Link>
               </span>
             )}

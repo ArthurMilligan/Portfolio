@@ -6,11 +6,11 @@ const intlTime = new Intl.DateTimeFormat('ru', {
   hour: 'numeric',
   minute: 'numeric',
 });
-const intlDate = new Intl.DateTimeFormat('ru', {
-  year: 'numeric',
-  month: 'numeric',
-  day: 'numeric',
-});
+// const intlDate = new Intl.DateTimeFormat('ru', {
+//   year: 'numeric',
+//   month: 'numeric',
+//   day: 'numeric',
+// });
 
 const Clock: FC = () => {
   const [time, setTime] = useState(Date.now());
@@ -24,9 +24,9 @@ const Clock: FC = () => {
       <Text bold className={s.clock__text}>
         {intlTime.format(time)}{' '}
       </Text>
-      <Text bold size='small' className={s.clock__text}>
+      {/* <Text bold size='small' className={s.clock__text}>
         {intlDate.format(time)}{' '}
-      </Text>
+      </Text> */}
     </div>
   );
 };

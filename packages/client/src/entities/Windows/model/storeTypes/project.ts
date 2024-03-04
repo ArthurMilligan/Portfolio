@@ -9,4 +9,5 @@ export interface IProject {
   codeUrl: string;
   projectType: string;
   icon: TIconName;
+  iframeUrl: string;
 }

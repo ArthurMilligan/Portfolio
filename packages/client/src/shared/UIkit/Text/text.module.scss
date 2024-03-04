@@ -1,15 +1,5 @@
 .text{
-    font-family: var(--ebr);
     line-height: 30px;
-    &_normal{
-      font-size: var(--tn);
-    }
-    &_small{
-      font-size: var(--ts);
-    }
-    &_large{
-      font-size: var(--tl);
-    }
     &_bold{
       font-weight: bold;
     }

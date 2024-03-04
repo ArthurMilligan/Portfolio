@@ -10,9 +10,10 @@ interface IOpenModalButtonProps {
   type: TWindowType;
   id: number;
   elemId?: number;
+  inFolder?: boolean;
 }
 const OpenModalButton: FC<IOpenModalButtonProps> = observer(
-  ({ id, icon, name, type, elemId }) => {
+  ({ id, icon, name, type, elemId, inFolder = false }) => {
     const [active, setActive] = useState(false);
     const { addWindow } = WindowStore;
     const { addItem } = MenuItemStore;
@@ -37,7 +38,9 @@ const OpenModalButton: FC<IOpenModalButtonProps> = observer(
         }}
       >
         <Icon size={66} name={icon} />
-        <Text className={s.openModalButton__name}>{shortName}</Text>
+        <Text inFolder={inFolder} className={s.openModalButton__name}>
+          {shortName}
+        </Text>
       </button>
     );
   },

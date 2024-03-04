@@ -20,7 +20,9 @@ const TextWithIcon: FC<ITextWithIconProps> = ({
 }) => (
   <span className={`${s.textWithIcon} ${className}`}>
     <Icon className={s.textWithIcon__icon} size={size} name={iconName} />
-    <Text className={s.textWithIcon__text} bold={bold}>{children}</Text>
+    <Text inFolder className={s.textWithIcon__text} bold={bold}>
+      {children}
+    </Text>
   </span>
 );
 

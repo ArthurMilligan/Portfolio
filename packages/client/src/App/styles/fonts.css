@@ -6,3 +6,7 @@
   font-family: EightBitsRu;
   src: url('lib/basis33.ttf');
 }
+@font-face {
+  font-family: SF;
+  src: url('lib/SF-Pro-Display-Regular.otf');
+}

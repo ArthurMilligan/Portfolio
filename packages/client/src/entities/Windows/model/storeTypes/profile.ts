@@ -43,4 +43,5 @@ export interface IProfile {
   achievements: string[];
   softSkills: ISkill[];
   hobbys: string;
+  iframeUrl: string;
 }

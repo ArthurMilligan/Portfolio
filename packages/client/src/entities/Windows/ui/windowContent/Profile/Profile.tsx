@@ -29,9 +29,24 @@ const Profile: FC<IProfile> = ({
   achievements,
   softSkills,
   hobbys,
+  iframeUrl,
 }) => {
   const intl = new Intl.DateTimeFormat('ru');
   const fromatDate = (date: Date): string => intl.format(new Date(date));
+
+  if (iframeUrl) {
+    return (
+      <div className={s.profile__iframe}>
+        <iframe
+          title={`${iframeUrl}`}
+          src={`${iframeUrl}`}
+          width='100%'
+          height='100%'
+          allow='autoplay'
+        />
+      </div>
+    );
+  }
 
   return (
     <div className={s.profile}>
@@ -42,11 +57,13 @@ const Profile: FC<IProfile> = ({
           <img src={avatar} alt={`img of ${name}`} />
         </div>
         <div className={s.profile__infoBlock}>
-          <Text>
+          <Text inFolder>
             {name}, {`${age}`}
           </Text>
-          <Text bold>{proffesion}</Text>
-          <Text>{about}</Text>
+          <Text inFolder bold>
+            {proffesion}
+          </Text>
+          <Text inFolder>{about}</Text>
         </div>
       </div>
       <Heading level={2}>Контакты</Heading>
@@ -70,7 +87,9 @@ const Profile: FC<IProfile> = ({
             <Heading level={4}>
               {place}, {position}
             </Heading>
-            <Text bold>Задачи</Text>
+            <Text inFolder bold>
+              Задачи
+            </Text>
             <div className={s.profile__taskList}>
               {tasks?.map((task) => (
                 <TextWithIcon key={uuid()} iconName='lamp'>
@@ -78,8 +97,10 @@ const Profile: FC<IProfile> = ({
                 </TextWithIcon>
               ))}
             </div>
-            <Text bold>Период</Text>
-            <Text>
+            <Text inFolder bold>
+              Период
+            </Text>
+            <Text inFolder>
               {fromatDate(dateStart)}-{fromatDate(dateEnd)}
             </Text>
           </div>
@@ -94,8 +115,8 @@ const Profile: FC<IProfile> = ({
             className={`${s.profile__infoBlock} ${s.profile__infoBlock_withBorder}`}
           >
             <Heading level={4}>{place}</Heading>
-            <Text>{direction}</Text>
-            <Text>
+            <Text inFolder>{direction}</Text>
+            <Text inFolder>
               {fromatDate(dateStart)}-{fromatDate(dateEnd)}
             </Text>
           </div>
@@ -107,8 +128,8 @@ const Profile: FC<IProfile> = ({
               className={`${s.profile__infoBlock} ${s.profile__infoBlock_withBorder}`}
             >
               <Heading level={4}>{place}</Heading>
-              <Text>{courseName}</Text>
-              <Text>
+              <Text inFolder>{courseName}</Text>
+              <Text inFolder>
                 {fromatDate(dateStart)}-{fromatDate(dateEnd)}
               </Text>
             </div>
@@ -137,7 +158,9 @@ const Profile: FC<IProfile> = ({
             <ArrayComponentsDecorator className={s.profile__sillsDropButton}>
               {sortSkills(hardSkills)?.map(({ name: skillName, level }) => (
                 <div key={uuid()} className={s.profile__skill}>
-                  <Text className={s.profile__hardSkillText}>{skillName} </Text>
+                  <Text inFolder className={s.profile__hardSkillText}>
+                    {skillName}{' '}
+                  </Text>
                   <Loadbar width={200} height={15} value={level / 5} />
                 </div>
               ))}
@@ -150,7 +173,9 @@ const Profile: FC<IProfile> = ({
             <ArrayComponentsDecorator className={s.profile__sillsDropButton}>
               {sortSkills(softSkills)?.map(({ name: skillName, level }) => (
                 <div key={uuid()} className={s.profile__skill}>
-                  <Text className={s.profile__softSkillText}>{skillName} </Text>
+                  <Text inFolder className={s.profile__softSkillText}>
+                    {skillName}{' '}
+                  </Text>
                   <Loadbar width={200} height={15} value={level / 5} />
                 </div>
               ))}
@@ -174,7 +199,7 @@ const Profile: FC<IProfile> = ({
       </div>
       <div>
         <Heading level={2}>Внерабочие увлечения</Heading>
-        <Text>{hobbys}</Text>
+        <Text inFolder>{hobbys}</Text>
       </div>
     </div>
   );

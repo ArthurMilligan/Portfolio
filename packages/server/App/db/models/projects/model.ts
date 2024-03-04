@@ -18,6 +18,7 @@ export interface IProjectsAttributes {
   codeUrl: string;
   projectType: string;
   icon: string;
+  iframeUrl: string;
 }
 
 @Table({ tableName: 'projects', timestamps: false })
@@ -77,6 +78,12 @@ class Projects extends Model<Projects, IProjectsAttributes> {
     allowNull: true,
   })
   stack: string[];
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
+  iframeUrl: string;
 
   @ForeignKey(() => Elements)
   elementId: number;

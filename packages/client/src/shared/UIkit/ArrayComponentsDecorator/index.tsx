@@ -31,7 +31,7 @@ const ArrayComponentsDecorator: FC<IArrayComponentDecoratorProps> = ({
           type='button'
           onClick={handleButtonClick}
         >
-          <Text>{show ? 'Свернуть' : 'Развернуть'}</Text>
+          <Text inFolder>{show ? 'Свернуть' : 'Развернуть'}</Text>
         </button>
       </div>
     </>

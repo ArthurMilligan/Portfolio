@@ -40,7 +40,7 @@ const HelloWindow: FC<IHelloWindowsProps> = ({ children }) => {
               name='mountains'
               size={60}
             />
-            <Text bold size='large' className={s.helloWindow__text}>
+            <Text bold size='Large' inFolder className={s.helloWindow__text}>
               Welcome to Arthur&apos;s portfolio
             </Text>
             <Icon

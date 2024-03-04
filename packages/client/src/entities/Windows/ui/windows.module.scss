@@ -1,6 +1,6 @@
 .windowModal{
   border: 2px solid black;
-  background-color: var(--bg);
+  overflow: hidden;
   &__dragContainer{
     position:absolute;
     &_collapse{
@@ -20,7 +20,6 @@
   }
   &__header{
     height: 30px;
-    background-color: var(--blue);
     border-bottom: 2px solid black;
     display: flex;
     align-items: center;

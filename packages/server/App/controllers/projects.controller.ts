@@ -10,6 +10,8 @@ class ProjectsAPI {
       const { id } = request.params;
       const project = await ProjectsService.findByElemId(+id);
 
+      console.log(project);
+
       return response.status(200).json(project);
     } catch (error) {
       console.info(error);
