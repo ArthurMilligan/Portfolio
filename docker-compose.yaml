@@ -1,15 +1,15 @@
 version: "3.9"
 
 services:
-  server:
-    container_name: server
-    image: server
+  server_ibrae:
+    container_name: server_ibrae
+    image: server_ibrae
     build:
       context: ./packages/server/
       dockerfile: Dockerfile.server
     restart: always
     depends_on:
-      - client
+      - client_ibrae
     environment:
       - "POSTGRES_USER=${POSTGRES_USER}"
       - "POSTGRES_PASSWORD=${POSTGRES_PASSWORD}"
@@ -22,17 +22,17 @@ services:
     networks:
       - portfolio_ibrae
 
-  client:
-    container_name: client
-    image: client
+  client_ibrae:
+    container_name: client_ibrae
+    image: client_ibrae
     build:
       context: ./packages/client/
       dockerfile: Dockerfile.client
     volumes:
       - dist:/app/dist
 
-  db:
-    container_name: portfolio_db
+  db_ibrae:
+    container_name: portfolio_db_ibrae
     image: postgres
     ports:
       - "3012:5432"
@@ -45,12 +45,12 @@ services:
       - portfolio_ibrae
 
 
-  nginx:
-    container_name: nginx
+  nginx_ibrae:
+    container_name: nginx_ibrae
     image: nginx
     restart: always
     depends_on:
-      - server
+      - server_ibrae
     ports:
       - "90:90"
       - "444:444"
