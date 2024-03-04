@@ -57,9 +57,11 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       - dist:/data/www
+      - dist2:/data/www2
       - etc-letsencrypt:/etc/letsencrypt
     networks:
       - portfolio
+      - portfolio_ibrae
 
   # certbot:
   #   image: certbot/certbot
@@ -77,7 +79,14 @@ volumes:
   etc-letsencrypt:
   www-html:
   dist:
+  dist2:
+    external: true
+    name: dist2
+
 
 networks:
   portfolio:
     name: portfolio
+  portfolio_ibrae:
+    external: true
+    name: portfolio_ibrae
