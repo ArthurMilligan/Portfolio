@@ -13,11 +13,12 @@ export type TIconName =
   | 'computer'
   | 'mountains'
   | 'mountains2'
-  | 'note';
+  | 'note'
+  | 'back';
 
-interface IIconProps extends HTMLProps<SVGSVGElement> {
+interface IIconProps extends Omit<HTMLProps<SVGSVGElement>, 'size'> {
   name: TIconName;
-  size?: number;
+  size?: number | string;
   className?: string;
 }
 

@@ -2,6 +2,10 @@
   padding: 10px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  &__element{
+    width: 120px;
+  }
   &__message{
     width: 100%;
     display: flex;
