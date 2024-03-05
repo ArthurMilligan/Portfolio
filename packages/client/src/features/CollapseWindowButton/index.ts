@@ -1,1 +1,1 @@
-export { default as CloseWindowButton } from './ui';
+export { default as CollapseWindowButton } from './ui';

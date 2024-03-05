@@ -5,17 +5,20 @@ import { type FC } from 'react';
 
 interface ICloseWindowButtonProps {
   id: number;
+  type?: 'close' | 'mobile';
 }
 
-const CloseWindowButton: FC<ICloseWindowButtonProps> = observer(({ id }) => {
-  const { closeWindow } = WindowStore;
-  const { deleteItem } = MenuItemStore;
-  const handleClick = (): void => {
-    closeWindow(id);
-    deleteItem(id);
-  };
+const CloseWindowButton: FC<ICloseWindowButtonProps> = observer(
+  ({ id, type = 'close' }) => {
+    const { closeWindow } = WindowStore;
+    const { deleteItem } = MenuItemStore;
+    const handleClick = (): void => {
+      closeWindow(id);
+      deleteItem(id);
+    };
 
-  return <PanelButton type='close' onClick={handleClick} name={`${id}`} />;
-});
+    return <PanelButton type={type} onClick={handleClick} name={`${id}`} />;
+  },
+);
 
 export default CloseWindowButton;

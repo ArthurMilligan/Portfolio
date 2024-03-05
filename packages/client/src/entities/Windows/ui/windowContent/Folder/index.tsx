@@ -12,25 +12,30 @@ interface IFolderProps extends IFolder {
     elemId?: number;
     inFolder?: boolean;
   }>;
+  isMobile?: boolean;
 }
 
-const Folder: FC<IFolderProps> = ({ ElementButton, items }) => (
-  <div className={s.folder}>
-    {!items.length && (
-      <Text inFolder className={s.folder__message}>
-        Папка пуста
-      </Text>
-    )}
+const Folder: FC<IFolderProps> = ({ ElementButton, items, isMobile }) => (
+  <div
+    className={s.folder}
+    style={{ justifyContent: isMobile ? 'space-between' : undefined }}
+  >
+    {!items.length && <Text className={s.folder__message}>Папка пуста</Text>}
     {items.map(({ icon, id, name, type, elementId }) => (
-      <ElementButton
-        key={id}
-        icon={icon}
-        id={id}
-        elemId={elementId}
-        name={name}
-        type={type}
-        inFolder
-      />
+      <div
+        style={{ width: isMobile ? '30%' : 120 }}
+        className={s.folder__element}
+      >
+        <ElementButton
+          key={id}
+          icon={icon}
+          id={id}
+          elemId={elementId}
+          name={name}
+          type={type}
+          inFolder
+        />
+      </div>
     ))}
   </div>
 );

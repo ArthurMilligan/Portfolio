@@ -8,8 +8,6 @@ const Header: FC = () => {
     theme: { backOfHeader },
   } = useThemeContext();
 
-  console.log({ backgroundColor: backOfHeader });
-
   return (
     <div style={{ backgroundColor: backOfHeader }} className={s.header}>
       <Text bold size='Large'>
