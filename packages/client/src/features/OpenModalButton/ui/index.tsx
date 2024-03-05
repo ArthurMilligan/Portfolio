@@ -23,10 +23,12 @@ const OpenModalButton: FC<IOpenModalButtonProps> = observer(
     };
     const shortName =
       !active && name.length > 11 ? `${name.slice(0, 8)}...` : name;
+    const paddingBottom = !active ? (Math.ceil(name.length / 11) - 1) * 30 : 0;
 
     return (
       <button
         name={`${id}`}
+        style={{ paddingBottom }}
         className={s.openModalButton}
         tabIndex={0}
         onDoubleClick={handleDoubleClick}

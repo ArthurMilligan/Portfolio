@@ -16,7 +16,11 @@ interface IFolderProps extends IFolder {
 
 const Folder: FC<IFolderProps> = ({ ElementButton, items }) => (
   <div className={s.folder}>
-    {!items.length && <Text className={s.folder__message}>Папка пуста</Text>}
+    {!items.length && (
+      <Text inFolder className={s.folder__message}>
+        Папка пуста
+      </Text>
+    )}
     {items.map(({ icon, id, name, type, elementId }) => (
       <ElementButton
         key={id}
