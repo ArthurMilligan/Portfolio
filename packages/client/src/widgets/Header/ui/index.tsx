@@ -1,6 +1,5 @@
 import { type FC } from 'react';
 import { Clock, Text, useThemeContext } from '@ui';
-import { ThemeChangeToggle } from '@features';
 import s from './header.module.scss';
 
 const Header: FC = () => {

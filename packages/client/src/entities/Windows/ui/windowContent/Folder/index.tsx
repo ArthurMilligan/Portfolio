@@ -18,7 +18,10 @@ interface IFolderProps extends IFolder {
 const Folder: FC<IFolderProps> = ({ ElementButton, items, isMobile }) => (
   <div
     className={s.folder}
-    style={{ justifyContent: isMobile ? 'space-between' : undefined }}
+    style={{
+      columnGap: isMobile ? '3vw' : undefined,
+      rowGap: isMobile ? '3vh' : undefined,
+    }}
   >
     {!items.length && <Text className={s.folder__message}>Папка пуста</Text>}
     {items.map(({ icon, id, name, type, elementId }) => (
