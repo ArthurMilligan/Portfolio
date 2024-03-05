@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 import './styles/style.css';
-import { Background, HelloWindow } from '@ui';
+import { Background } from '@ui';
 import Home, { Mobile } from '../pages';
 import withProviders from './providers';
 
@@ -12,7 +12,7 @@ const App: FC = () => (
       <Mobile />
     ) : (
       // <HelloWindow>
-        <Home />
+      <Home />
       // </HelloWindow>
     )}
   </Background>
