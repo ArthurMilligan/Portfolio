@@ -1,21 +1,20 @@
 import { type FC } from 'react';
 import './styles/style.css';
-import { Background } from '@ui';
+import { Background, BackgroundMobile } from '@ui';
 import Home, { Mobile } from '../pages';
 import withProviders from './providers';
 
 const { innerWidth } = window;
 
-const App: FC = () => (
-  <Background>
-    {innerWidth < 750 ? (
+const App: FC = () =>
+  innerWidth < 750 ? (
+    <BackgroundMobile>
       <Mobile />
-    ) : (
-      // <HelloWindow>
+    </BackgroundMobile>
+  ) : (
+    <Background>
       <Home />
-      // </HelloWindow>
-    )}
-  </Background>
-);
+    </Background>
+  );
 
 export default withProviders(<App />);

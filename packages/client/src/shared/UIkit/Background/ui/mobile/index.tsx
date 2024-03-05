@@ -1,5 +1,5 @@
 import { type ReactNode, type FC } from 'react';
-import { useThemeContext } from '../ThemeContext';
+import { useThemeContext } from '../../../ThemeContext';
 import s from './background.module.scss';
 import {
   Circle,
@@ -9,13 +9,13 @@ import {
   RedLarge,
   RedMedium,
   RedSmall,
-} from './svg';
+} from '../../svg';
 
 interface IBackgroundProps {
   children: ReactNode;
 }
 
-const Background: FC<IBackgroundProps> = ({ children }) => {
+const BackgroundMobile: FC<IBackgroundProps> = ({ children }) => {
   const {
     theme: { name, background },
   } = useThemeContext();
@@ -54,4 +54,4 @@ const Background: FC<IBackgroundProps> = ({ children }) => {
   );
 };
 
-export default Background;
+export default BackgroundMobile;
