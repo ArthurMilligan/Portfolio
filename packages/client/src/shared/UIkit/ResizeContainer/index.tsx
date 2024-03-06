@@ -33,8 +33,8 @@ const ResizeContainer: FC<IResizeContainerProps> = ({
   customOnMouseDown,
 }) => {
   const [resizeData, setResizeData] = useState({
-    width: 700,
-    height: 500,
+    width: 950,
+    height: 650,
     minWidth: 200,
     minHeight: 200,
   });

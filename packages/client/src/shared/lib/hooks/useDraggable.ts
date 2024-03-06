@@ -34,8 +34,8 @@ const useDraggable = (index: number): IUseDraggagleReturn => {
 
   useEffect(() => {
     if (ref?.current) {
-      ref.current.style.left = `calc(25vw + ${index * 9}px)`;
-      ref.current.style.top = `calc(10vh + ${index * 9}px)`;
+      ref.current.style.left = `calc(20vw + ${index * 9}px)`;
+      ref.current.style.top = `calc(5vh + ${index * 9}px)`;
     }
   }, []);
 
