@@ -10,12 +10,12 @@ const Header: FC = () => {
   return (
     <div style={{ backgroundColor: backOfHeader }} className={s.header}>
       <Text bold size='Large'>
-        Digital Economy
+        Цифровая экономика
       </Text>
       <div className={s.header__meta}>
         {/* <ThemeChangeToggle /> */}
         <Clock />
-        <Text>v1.1</Text>
+        {/* <Text>v1.1</Text> */}
       </div>
     </div>
   );

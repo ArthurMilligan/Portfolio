@@ -14,7 +14,11 @@ export type TIconName =
   | 'mountains'
   | 'mountains2'
   | 'note'
-  | 'back';
+  | 'back'
+  | 'dsm'
+  | 'sub'
+  | 've'
+  | 'wf';
 
 interface IIconProps extends Omit<HTMLProps<SVGSVGElement>, 'size'> {
   name: TIconName;
