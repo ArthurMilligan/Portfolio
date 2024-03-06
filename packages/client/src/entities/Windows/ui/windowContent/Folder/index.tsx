@@ -19,8 +19,8 @@ const Folder: FC<IFolderProps> = ({ ElementButton, items, isMobile }) => (
   <div
     className={s.folder}
     style={{
-      columnGap: isMobile ? '3vw' : undefined,
-      rowGap: isMobile ? '3vh' : undefined,
+      columnGap: isMobile ? '3dvw' : undefined,
+      rowGap: isMobile ? '3dvh' : undefined,
     }}
   >
     {!items.length && <Text className={s.folder__message}>Папка пуста</Text>}

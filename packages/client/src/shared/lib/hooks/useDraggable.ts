@@ -32,12 +32,12 @@ const useDraggable = (index: number): IUseDraggagleReturn => {
   });
   const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(()=>{
-    if(ref?.current){
-      ref.current.style.left = `calc(25vw + ${index*9}px)`
-      ref.current.style.top = `calc(10vh + ${index*9}px)`
+  useEffect(() => {
+    if (ref?.current) {
+      ref.current.style.left = `calc(25vw + ${index * 9}px)`;
+      ref.current.style.top = `calc(10vh + ${index * 9}px)`;
     }
-  },[])
+  }, []);
 
   const handleMouseMove = (e: MouseEvent): void => {
     const mouseTop = mouse.top ?? 0;

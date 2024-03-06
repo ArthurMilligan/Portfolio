@@ -1,1 +1,1 @@
-export * from './desctopElementSize'
+export * from './desctopElementSize';

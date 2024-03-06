@@ -1,6 +1,6 @@
 .mobile{
-  height: 100vh;
-  width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
   background-color: #2E8B57;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@
     width: 80vw;
     font-family:sans-serif;
     text-align: center;
-    font-size: 3vh;
+    font-size: 3dvh;
     color: white;
   }
 }
